@@ -57,6 +57,11 @@ Basic_comm = {
     "AP1D>500/SIM": 42
 }
 
+flash_sale = {
+    "AP1D>200-249/SIM": 25,
+    "AP1D>250-299/SIM": 30,
+    "AP1D>300/SIM": 40,
+}
 # 1. ตั้งค่าเริ่มต้นทุกอย่างให้ 0
 total_commission = 0
 total_commission_student = 0
@@ -223,19 +228,17 @@ st.divider()
 
 # Step 3 Flash sales Input (แก้ไข)
 st.subheader("3. 🎯 Flash Sales ")
-col11, col12, col13, col14, col15 = st.columns(5)
+col11, col12, col13 = st.columns(3)
 inputs_flash = {}
 
+
 with col11:
-    inputs_flash["AP1D>150-199/SIM"] = st.number_input("AP1D>150-199", value=0, step=1, key="input_flash_150")
-with col12:
     inputs_flash["AP1D>200-249/SIM"] = st.number_input("AP1D>200-249", value=0, step=1, key="input_flash_200")
-with col13:
+with col12:
     inputs_flash["AP1D>250-299/SIM"] = st.number_input("AP1D>250-299", value=0, step=1, key="input_flash_250")
-with col14:
-    inputs_flash["AP1D>300-499/SIM"] = st.number_input("AP1D>300-499", value=0, step=1, key="input_flash_300")
-with col15:
-    inputs_flash["AP1D>500/SIM"] = st.number_input("AP1D>500", value=0, step=1, key="input_flash_500")
+with col13:
+    inputs_flash["AP1D>300/SIM"] = st.number_input("AP1D>300-499", value=0, step=1, key="input_flash_300")
+
 
 st.divider()
 
@@ -247,7 +250,7 @@ total_commission_flash = 0
 for category, sim_count in inputs_flash.items():
     if sim_count > 0:
         # Flash rate = 30 บาท/SIM สำหรับทุก category
-        flash_rate = 30
+        flash_rate = flash_sale[category]
         flash_comm = sim_count * flash_rate
         total_sim_flash += sim_count
         total_commission_flash += flash_comm

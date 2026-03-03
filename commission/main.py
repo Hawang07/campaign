@@ -11,7 +11,7 @@ st.set_page_config(
 USERS = {
     "Somwang": "0944542994",
     "Thari": "0955405556",
-    "Chutipha": "123456"
+    "Chutipa": "123456"
 }
 
 if "logged_in" not in st.session_state:

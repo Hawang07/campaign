@@ -10,10 +10,13 @@ st.set_page_config(
 
 USERS = {
     "Somwang": "0944542994",
-    "Thari": "0955405556",
+    "Tharinee": "0955405556",
     "Chutipa": "123456",
     "Jittima":"123456",
-    "Thanapon":"123456"
+    "Thanapon":"123456",
+    "Charinthip":"123456",
+    "Namoun":"123456",
+    "Areewan":"123456"
 }
 
 if "logged_in" not in st.session_state:

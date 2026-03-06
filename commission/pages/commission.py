@@ -173,7 +173,7 @@ sim_choices = [
 ]
 
 selected_ranges = st.multiselect(
-    "เลือกช่วงปริมาณ SIM",
+    "เลือกเป้า SIM",
     sim_choices,
     default=["5-19"],  # ตั้ง default ให้ช่องดูสมบูรณ์
     key="sim_multi"

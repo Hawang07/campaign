@@ -75,11 +75,9 @@ st.divider()
 
 # Step 1: Basic_comm Input (เพิ่ม key)
 st.subheader("1. 🔢 Basic Commission")
-col1, col2, col3, col4, col5 = st.columns(5)
+col2, col3, col4, col5 = st.columns(4)
 inputs_basic = {}
 
-with col1:
-    inputs_basic["AP1D>150-199/SIM"] = st.number_input("AP1D>150-199", value=0, step=1, key="input_basic_150")
 with col2:
     inputs_basic["AP1D>200-249/SIM"] = st.number_input("AP1D>200-249", value=0, step=1, key="input_basic_200")
 with col3:
@@ -140,7 +138,7 @@ def get_commission_rate(sim_count, price_category):
     elif 500 <= sim_count <= 899:
         rates = {'200-249': 25, '250-299': 40, '300-349': 60, '350+': 70}
     elif sim_count >= 900:
-        rates = {'200-249': 25, '250-299': 40, '300-349': 60, '350+': 75}
+        rates = {'200-249': 20, '250-299': 40, '300-349': 60, '350+': 75}
     else:
         rates = {'200-249': 0, '250-299': 0, '300-349': 0, '350+': 0}
     
